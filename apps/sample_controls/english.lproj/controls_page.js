@@ -204,7 +204,7 @@ SampleControls.controlsPage = SC.Page.create({
     })
 
     .title('SC.ProgressView').height(20).sample(SC.ProgressView, {
-      value: 5,
+      value: 10,
       minimum: 0,
       maximum: 100
     }, {  

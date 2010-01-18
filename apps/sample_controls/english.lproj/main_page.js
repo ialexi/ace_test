@@ -12,29 +12,59 @@ SampleControls.mainPage = SC.Page.create({
   pageName: 'SampleControls.mainPage',
   
   mainPane: SC.MainPane.design({
+    childViews: "toolbar split".w(),
     
-    childViews: [SC.TabView.design({
-      
-      value: 'welcome',
-      
-      items: [
-        { title: "Welcome", value: "welcome" },
-        { title: "Controls", value: "SampleControls.controlsPage.mainView" },
-        { title: "Collections", value: "SampleControls.collectionsPage.mainView" },
-        //{ title: "Form", value: "SampleControls.formsPage.mainView" },
-        { title: "Containers", value: "SampleControls.containerPage.mainView" },
-        { title: "Panes", value: "SampleControls.panePage.mainView" },
-        { title: "Icons", value: "SampleControls.iconsPage.mainView" }
-      ],
-      
-      itemTitleKey: 'title',
-      itemValueKey: 'value',
-            
-      layout: { left:12, right:12, top:12, bottom:12 },
-      
-      userDefaultKey: "mainPane"
-      
-    })]
+    toolbar: SC.ToolbarView.design({
+      layout: { top: 0, left: 0, right: 0, height: 32 },
+      childViews: "label".w(),
+      label: SC.LabelView.design({
+        layout: { left: 10, centerY: 0, height: 21, width: 200 },
+        value: "Sample Controls",
+        classNames: "embossed".w()
+      })
+    }),
+    split: SC.SplitView.design ({
+      layout: {left: 0, top: 32, right: 0, bottom: 0},
+      dividerThickness: 0,
+      defaultThickness: 200,
+      topLeftView: SC.SourceListView.design({
+        layout: { left: 0, top: 0, right: 0, bottom: 0 },
+        contentValueKey: "name",
+        contentIndexIsGroup: function(view, content, idx) {
+          return content[idx].group;
+        },
+        contentIndexOutlineLevel: function(view, content, idx) {
+          return content[idx].group ? 0 : 1;
+        },
+        contentIndexDisclosureState: function(view, content, idx) {
+          return content[idx].group ? content[idx].groupState : SC.LEAF_NODE;
+        },
+        content: [
+          SC.Object.create({
+            name: "Controls",
+            group: YES,
+            groupState: SC.BRANCH_OPEN
+          }),
+          SC.Object.create({
+            name: "Buttons"
+          }),
+          SC.Object.create({
+            name: "Progress"
+          }),
+          SC.Object.create({
+            name: "Collections",
+            group: YES,
+            groupState: SC.BRANCH_OPEN
+          }),
+          SC.Object.create({
+            name: "List"
+          })
+        ]
+      }),
+      bottomRightView: SC.ContainerView.design({
+        nowShowing: "welcome"
+      })
+    })
     
   }),
 

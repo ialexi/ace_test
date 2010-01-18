@@ -1,5 +1,9 @@
 /* @group Welcome */
 
+.sc-toolbar-view .embossed {
+  font-size: 22px;
+}
+
 .welcome-tab {
  padding: 30px;
  background-color: white ;

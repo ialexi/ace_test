@@ -43,6 +43,7 @@ function main() {
   
   // SC.Benchmark.start('buttonPage.mainPane.append()') ;
   SampleControls.getPath('mainPage.mainPane').append();
+  SampleControls.categoriesController.set("content", SampleControls.rootCategory);
   // SampleControls.getPath('collectionsPage.mainPane').append();
   // SC.Benchmark.end('buttonPage.mainPane.append()') ;
 }

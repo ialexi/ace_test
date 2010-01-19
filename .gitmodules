@@ -1,3 +1,6 @@
 [submodule "themes/ace"]
 	path = themes/ace
 	url = git://github.com/ialexi/Ace.git
+[submodule "frameworks/forms"]
+	path = frameworks/forms
+	url = git://github.com/ialexi/Forms.git

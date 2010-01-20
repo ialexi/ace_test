@@ -75,7 +75,7 @@ SampleControls.mainPage = SC.Page.create({
     form: Forms.FormView.design({
       classNames: ["sample_controls"],
       layout: { left: 20, top: 40, right: 20, bottom: 40 },
-      fields: "header normal disabled".w(),
+      fields: "header normal disabled normalToggle disabledToggle".w(),
       header: Forms.FormView.row(SC.LabelView, {
         autoResize: YES,
         classNames: "header".w(),
@@ -90,6 +90,41 @@ SampleControls.mainPage = SC.Page.create({
         layout: { height: 24, centerY: 0, left: 0, width: 150 },
         isEnabled: NO,
         title: "Don't Click Me"
+      }),
+      normalToggle: Forms.FormView.row(SC.ButtonView, {
+        layout: { height: 24, centerY: 0, left: 0, width: 100 },
+        title: "Toggle Me",
+        buttonBehavior: SC.TOGGLE_BEHAVIOR
+      }),
+      disabledToggle: Forms.FormView.row(SC.ButtonView, {
+        layout: { height: 24, centerY: 0, left: 0, width: 150 },
+        isEnabled: NO,
+        title: "Don't Toggle Me",
+        buttonBehavior: SC.TOGGLE_BEHAVIOR
+      })
+    })
+  }),
+  
+  checkboxes_page: SC.View.design({
+    childViews: "form".w(),
+    form: Forms.FormView.design({
+      classNames: ["sample_controls"],
+      layout: { left: 20, top: 40, right: 20, bottom: 40 },
+      fields: "header normal disabled".w(),
+      header: Forms.FormView.row(SC.LabelView, {
+        autoResize: YES,
+        classNames: "header".w(),
+        value: "Checkboxes",
+        fieldLabel: NO
+      }),
+      normal: Forms.FormView.row(SC.CheckboxView, {
+        layout: { left: 0, width: 150, height: 24, centerY: 0},
+        title: "Test"
+      }),
+      disabled: Forms.FormView.row(SC.CheckboxView, {
+        layout: { left: 0, width: 150, height: 24, centerY: 0},
+        isEnabled: NO,
+        title: "Test"
       })
     })
   })

@@ -20,8 +20,16 @@ SampleControls.rootCategory = SC.Object.create({
           show: "buttons_page"
         }),
         SC.Object.create({
+          name: "Checkboxes",
+          show: "checkboxes_page"
+        }),
+        SC.Object.create({
           name: "Progress",
           show: "progress_page"
+        }),
+        SC.Object.create({
+          name: "Radio",
+          show: "radio_page"
         })
       ]
     }),

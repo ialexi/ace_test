@@ -110,7 +110,7 @@ SampleControls.mainPage = SC.Page.create({
     form: Forms.FormView.design({
       classNames: ["sample_controls"],
       layout: { left: 20, top: 40, right: 20, bottom: 40 },
-      fields: "header normal disabled".w(),
+      fields: "header normal disabled multiple".w(),
       header: Forms.FormView.row(SC.LabelView, {
         autoResize: YES,
         classNames: "header".w(),
@@ -119,12 +119,51 @@ SampleControls.mainPage = SC.Page.create({
       }),
       normal: Forms.FormView.row(SC.CheckboxView, {
         layout: { left: 0, width: 150, height: 24, centerY: 0},
-        title: "Test"
+        title: "Check Me"
       }),
       disabled: Forms.FormView.row(SC.CheckboxView, {
         layout: { left: 0, width: 150, height: 24, centerY: 0},
         isEnabled: NO,
-        title: "Test"
+        title: "Don't Check Me"
+      }),
+      multiple: Forms.FormView.row(SC.CheckboxView, {
+        layout: { left: 0, width: 150, height: 24, centerY: 0},
+        value: [YES, NO],
+        title: "Multiple?"
+      })
+    })
+  }),
+  
+  radio_page: SC.View.design({
+    childViews: "form".w(),
+    form: Forms.FormView.design({
+      classNames: ["sample_controls"],
+      layout: { left: 20, top: 40, right: 20, bottom: 40 },
+      fields: "header normal disabled multiple".w(),
+      header: Forms.FormView.row(SC.LabelView, {
+        autoResize: YES,
+        classNames: "header".w(),
+        value: "Radio Views",
+        fieldLabel: NO
+      }),
+      normal: Forms.FormView.row(SC.RadioView, {
+        layout: { left: 0, width: 150, height: 24, centerY: 0},
+        items: [ { title: "One", value: "one" },{ title: "Two", value: "two" },{ title: "Three", value: "three" } ],
+        itemTitleKey: "title", itemValueKey: "value",
+        value: null
+      }),
+      disabled: Forms.FormView.row(SC.RadioView, {
+        layout: { left: 0, width: 150, height: 24, centerY: 0},
+        isEnabled: NO,
+        items: [ { title: "One", value: "one" },{ title: "Two", value: "two" },{ title: "Three", value: "three" } ],
+        itemTitleKey: "title", itemValueKey: "value",
+        value: "one"
+      }),
+      multiple: Forms.FormView.row(SC.RadioView, {
+        layout: { left: 0, width: 150, height: 24, centerY: 0},
+        items: [ { title: "One", value: "one" },{ title: "Two", value: "two" },{ title: "Three", value: "three" } ],
+        itemTitleKey: "title", itemValueKey: "value",
+        value: ["one", "three"]
       })
     })
   })

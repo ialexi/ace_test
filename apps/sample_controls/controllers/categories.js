@@ -30,6 +30,10 @@ SampleControls.rootCategory = SC.Object.create({
         SC.Object.create({
           name: "Radio",
           show: "radio_page"
+        }),
+        SC.Object.create({
+          name: "Select Button",
+          show: "select_page"
         })
       ]
     }),

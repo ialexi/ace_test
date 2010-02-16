@@ -80,7 +80,7 @@ end
 config :store_configurator, 
   :required => 'sproutcore/runtime'#, :theme => nil
 
-config :sample_controls, :theme => "ace"
+config :sample_controls, :theme => ["ace"]
 
 # Vanilla requires only the empty theme and foundation.  It is used to test
 # just the plain vanilla, platform-independent components of SproutCore.

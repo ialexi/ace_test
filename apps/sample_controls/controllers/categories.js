@@ -13,7 +13,6 @@ SampleControls.rootCategory = SC.Object.create({
       treeItemIsExpanded: YES,
       group: true,
       name: "Controls",
-      count: 2,
       treeItemChildren: [
         SC.Object.create({
           name: "Buttons",
@@ -41,11 +40,21 @@ SampleControls.rootCategory = SC.Object.create({
       treeItemIsExpanded: YES,
       group: true,
       name: "Collections",
-      count: 1,
       treeItemChildren: [
         SC.Object.create({
           name: "List",
           show: "list_page"
+        })
+      ]
+    }),
+    SC.Object.create({
+      treeItemIsExpanded: YES,
+      group: true,
+      name: "Fields",
+      treeItemChildren: [
+        SC.Object.create({
+          name: "Text Field",
+          show: "text_field_page"
         })
       ]
     })

@@ -7,7 +7,7 @@ SampleControls.textFieldPage = SC.View.design({
     header: Forms.FormView.row(SC.LabelView, {
       autoResize: YES,
       classNames: "header".w(),
-      value: "Text Fields 1",
+      value: "Text Fields",
       fieldLabel: NO
     }),
     normal: Forms.FormView.row(SC.TextFieldView, {

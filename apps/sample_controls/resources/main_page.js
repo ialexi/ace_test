@@ -9,13 +9,15 @@ require("resources/buttons_page");
 require("resources/checkboxes_page");
 require("resources/radio_page");
 require("resources/select_page");
+require("resources/segmented_page");
 require("resources/text_field_page");
 
 SampleControls.mainPage = SC.Page.create({
   
   pageName: 'SampleControls.mainPage',
   
-  mainPane: SC.MainPane.design({
+  mainPane: SC.PanelPane.design(SC.Animatable, {
+    contentView: SC.View.design({
     childViews: "toolbar split".w(),
     
     toolbar: SC.ToolbarView.design({
@@ -42,7 +44,7 @@ SampleControls.mainPage = SC.Page.create({
         nowShowingBinding: "SampleControls.categoryController.show"
       })
     })
-    
+    })
   }),
 
   welcome: SC.LabelView.design({
@@ -61,7 +63,9 @@ SampleControls.mainPage = SC.Page.create({
   
   select_page: SampleControls.selectPage,
   
-  text_field_page: SampleControls.textFieldPage
+  text_field_page: SampleControls.textFieldPage,
+  
+  segmented_page: SampleControls.segmentedPage
   
   
 });

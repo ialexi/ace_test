@@ -8,6 +8,7 @@
 # your load path.  The sproutcore gem is automatically loaded for you.
 #
 # require 'sproutcore'
+config :all, :url_prefix => '/static/suite/'
 
 # This configuration section will be applied to all bundles used by your
 # application, even bundles that come from other gems.
@@ -80,7 +81,7 @@ end
 config :store_configurator, 
   :required => 'sproutcore/runtime'#, :theme => nil
 
-config :sample_controls, :theme => ["ace"]
+config :sample_controls, :theme => ["sproutcore/sc_ace"]
 
 # Vanilla requires only the empty theme and foundation.  It is used to test
 # just the plain vanilla, platform-independent components of SproutCore.

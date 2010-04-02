@@ -31,6 +31,10 @@ SampleControls.rootCategory = SC.Object.create({
           show: "radio_page"
         }),
         SC.Object.create({
+          name: "Segmented Button",
+          show: "segmented_page"
+        }),
+        SC.Object.create({
           name: "Select Button",
           show: "select_page"
         })
